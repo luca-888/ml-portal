@@ -106,6 +106,146 @@
     "tags": ["Inference", "C"]
   },
   {
+    "category": "implementation",
+    "title": "nanochat",
+    "description": "预训练、SFT、评估与对话的端到端实现。",
+    "url": "https://github.com/karpathy/nanochat",
+    "tags": ["Full Stack", "Training"]
+  },
+  {
+    "category": "implementation",
+    "title": "build-nanogpt",
+    "description": "按提交步骤构建 GPT-2 训练代码。",
+    "url": "https://github.com/karpathy/build-nanogpt",
+    "tags": ["GPT", "Training"]
+  },
+  {
+    "category": "implementation",
+    "title": "modded-nanogpt",
+    "description": "围绕 GPT-2 训练速度的 nanoGPT 实验实现。",
+    "url": "https://github.com/KellerJordan/modded-nanogpt",
+    "tags": ["Training", "Optimization"]
+  },
+  {
+    "category": "implementation",
+    "title": "LLMs from Scratch",
+    "description": "用 PyTorch 分步实现预训练、微调与指令对齐。",
+    "url": "https://github.com/rasbt/LLMs-from-scratch",
+    "tags": ["LLM", "PyTorch"]
+  },
+  {
+    "category": "implementation",
+    "title": "picoGPT",
+    "description": "用 NumPy 实现 GPT-2 推理。",
+    "url": "https://github.com/jaymody/picoGPT",
+    "tags": ["GPT", "NumPy"]
+  },
+  {
+    "category": "implementation",
+    "title": "micrograd",
+    "description": "标量自动微分引擎与神经网络库。",
+    "url": "https://github.com/karpathy/micrograd",
+    "tags": ["Autograd", "Fundamentals"]
+  },
+  {
+    "category": "implementation",
+    "title": "minbpe",
+    "description": "BPE tokenizer 的实现与练习。",
+    "url": "https://github.com/karpathy/minbpe",
+    "tags": ["Tokenizer", "BPE"]
+  },
+  {
+    "category": "implementation",
+    "title": "MiniTorch",
+    "description": "用 Python 重建张量、自动微分与神经网络组件。",
+    "url": "https://github.com/minitorch/minitorch",
+    "icon": "https://github.com/minitorch.png?size=64",
+    "tags": ["Autograd", "Tensors"]
+  },
+  {
+    "category": "implementation",
+    "title": "Annotated Transformer",
+    "description": "Transformer 论文的注释版 PyTorch 实现。",
+    "url": "https://github.com/harvardnlp/annotated-transformer",
+    "icon": "https://github.com/harvardnlp.png?size=64",
+    "tags": ["Transformer", "PyTorch"]
+  },
+  {
+    "category": "implementation",
+    "title": "labml.ai Implementations",
+    "description": "深度学习论文的带注释实现集合。",
+    "url": "https://github.com/labmlai/annotated_deep_learning_paper_implementations",
+    "icon": "https://github.com/labmlai.png?size=64",
+    "tags": ["Papers", "Implementations"]
+  },
+  {
+    "category": "implementation",
+    "title": "tinygrad",
+    "description": "张量运算、自动微分、编译与设备后端实现。",
+    "url": "https://github.com/tinygrad/tinygrad",
+    "icon": "https://github.com/tinygrad.png?size=64",
+    "tags": ["Framework", "Compiler"]
+  },
+  {
+    "category": "implementation",
+    "title": "Picotron",
+    "description": "数据、张量、流水线与上下文并行训练实现。",
+    "url": "https://github.com/huggingface/picotron",
+    "icon": "https://github.com/huggingface.png?size=64",
+    "tags": ["Distributed", "Training"]
+  },
+  {
+    "category": "implementation",
+    "title": "Nanotron",
+    "description": "大语言模型 3D 并行训练实现。",
+    "url": "https://github.com/huggingface/nanotron",
+    "icon": "https://github.com/huggingface.png?size=64",
+    "tags": ["Distributed", "Training"]
+  },
+  {
+    "category": "implementation",
+    "title": "SimpleLLM",
+    "description": "从头实现的异步大模型推理引擎。",
+    "url": "https://github.com/naklecha/simple-llm",
+    "tags": ["Inference", "Systems"]
+  },
+  {
+    "category": "implementation",
+    "title": "tiny-vllm",
+    "description": "用 C++/CUDA 实现批处理、KV cache 与 PagedAttention。",
+    "url": "https://github.com/jmaczan/tiny-vllm",
+    "tags": ["Inference", "CUDA"]
+  },
+  {
+    "category": "implementation",
+    "title": "GPU Puzzles",
+    "description": "通过练习实现 GPU kernels。",
+    "url": "https://github.com/srush/GPU-Puzzles",
+    "tags": ["GPU", "CUDA"]
+  },
+  {
+    "category": "implementation",
+    "title": "SGEMM CUDA",
+    "description": "从头实现和优化 CUDA 矩阵乘法。",
+    "url": "https://github.com/siboehm/SGEMM_CUDA",
+    "tags": ["CUDA", "Kernels"]
+  },
+  {
+    "category": "implementation",
+    "title": "Alignment Handbook",
+    "description": "继续预训练、SFT 与偏好对齐的训练配方。",
+    "url": "https://github.com/huggingface/alignment-handbook",
+    "icon": "https://github.com/huggingface.png?size=64",
+    "tags": ["Post-training", "DPO"]
+  },
+  {
+    "category": "implementation",
+    "title": "nanoRL",
+    "description": "PPO、DPO 与 GRPO 的单文件实现。",
+    "url": "https://github.com/ethanhe42/nanoRL",
+    "tags": ["Post-training", "RL"]
+  },
+  {
     "category": "course",
     "title": "Practical Deep Learning",
     "description": "代码驱动的深度学习课程。",

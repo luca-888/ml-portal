@@ -13,6 +13,9 @@ test("generates the complete resource catalog", () => {
   assert.match(html, /PyTorch/);
   assert.match(html, /SGLang/);
   assert.match(html, /Nano-vLLM/);
+  assert.match(html, /nanochat/);
+  assert.match(html, /Picotron/);
+  assert.match(html, /nanoRL/);
   assert.match(html, /Hugging Face/);
   assert.match(html, /data\/resources\.json/);
   assert.match(html, /id="resource-search"/);
