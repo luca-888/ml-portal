@@ -63,6 +63,41 @@
     "tags": ["Post-training", "RLHF"]
   },
   {
+    "category": "implementation",
+    "title": "Nano-vLLM",
+    "description": "从头实现的 vLLM 推理引擎。",
+    "url": "https://github.com/GeeeekExplorer/nano-vllm",
+    "tags": ["Inference", "Systems"]
+  },
+  {
+    "category": "implementation",
+    "title": "Mini-SGLang",
+    "description": "用于理解大模型服务系统的 SGLang 实现。",
+    "url": "https://github.com/sgl-project/mini-sglang",
+    "tags": ["Inference", "Systems"]
+  },
+  {
+    "category": "implementation",
+    "title": "nanoGPT",
+    "description": "用于训练和微调 GPT 的 PyTorch 实现。",
+    "url": "https://github.com/karpathy/nanoGPT",
+    "tags": ["Training", "GPT"]
+  },
+  {
+    "category": "implementation",
+    "title": "llm.c",
+    "description": "用 C/CUDA 实现 GPT 训练。",
+    "url": "https://github.com/karpathy/llm.c",
+    "tags": ["Training", "C/CUDA"]
+  },
+  {
+    "category": "implementation",
+    "title": "llama2.c",
+    "description": "用 C 实现 Llama 2 推理。",
+    "url": "https://github.com/karpathy/llama2.c",
+    "tags": ["Inference", "C"]
+  },
+  {
     "category": "course",
     "title": "Practical Deep Learning",
     "description": "代码驱动的深度学习课程。",

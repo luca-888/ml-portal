@@ -12,10 +12,12 @@ test("generates the complete resource catalog", () => {
   assert.match(html, new RegExp(`${resources.length} 个资源`));
   assert.match(html, /PyTorch/);
   assert.match(html, /SGLang/);
+  assert.match(html, /Nano-vLLM/);
   assert.match(html, /Hugging Face/);
   assert.match(html, /data\/resources\.json/);
   assert.match(html, /id="resource-search"/);
   assert.match(html, /data-filter="course"/);
+  assert.match(html, /data-filter="implementation"/);
   assert.match(html, /class="resource-row"/);
 });
 

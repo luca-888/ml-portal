@@ -10,10 +10,11 @@ const resources = JSON.parse(
 
 const categories = [
   { key: "repo", label: "开源仓库", number: "01" },
-  { key: "course", label: "课程", number: "02" },
-  { key: "research", label: "论文与研究", number: "03" },
-  { key: "blog", label: "博客", number: "04" },
-  { key: "tool", label: "工具", number: "05" },
+  { key: "implementation", label: "学习实现", number: "02" },
+  { key: "course", label: "课程", number: "03" },
+  { key: "research", label: "论文与研究", number: "04" },
+  { key: "blog", label: "博客", number: "05" },
+  { key: "tool", label: "工具", number: "06" },
 ];
 
 validateResources(resources);
@@ -76,7 +77,7 @@ const html = `<!doctype html>
     <script src="./app.js" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gradient Atlas · 梯度图谱">
-    <meta property="og:description" content="机器学习仓库、课程、论文、博客与工具。">
+    <meta property="og:description" content="机器学习仓库、学习实现、课程、论文、博客与工具。">
     <meta property="og:url" content="https://luca-888.github.io/ml-portal/">
     <meta property="og:image" content="https://luca-888.github.io/ml-portal/og.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -96,7 +97,7 @@ const html = `<!doctype html>
           <p class="eyebrow">ML LEARNING DIRECTORY</p>
           <h1>机器学习资源索引</h1>
         </div>
-        <p>仓库、课程、论文、博客与工具。支持搜索和分类筛选。</p>
+        <p>仓库、学习实现、课程、论文、博客与工具。支持搜索和分类筛选。</p>
       </section>
 
       <section class="directory" id="resources">

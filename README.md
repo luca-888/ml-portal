@@ -34,7 +34,7 @@ GitHub Pages
 }
 ```
 
-`category` 可选：`repo`、`course`、`research`、`blog`、`tool`。
+`category` 可选：`repo`、`implementation`、`course`、`research`、`blog`、`tool`。
 
 ## 本地生成
 
