@@ -1,6 +1,6 @@
 # Gradient Atlas · 梯度图谱
 
-一份简单、持续维护的机器学习学习资源清单。
+机器学习资源清单和静态网站。
 
 网站：[luca-888.github.io/ml-portal](https://luca-888.github.io/ml-portal/)
 
@@ -28,7 +28,7 @@ GitHub Pages
 {
   "category": "course",
   "title": "资源名称",
-  "description": "为什么值得学习。",
+  "description": "资源用途。",
   "url": "https://example.com/",
   "tags": ["Topic", "Free"]
 }

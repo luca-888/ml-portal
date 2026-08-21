@@ -47,14 +47,11 @@ const rows = resources
       categoryLabel,
       ...resource.tags,
     ].join(" ");
-    const domain = new URL(resource.url).hostname.replace(/^www\./, "");
-
     return `
       <article class="resource-row" data-resource data-category="${resource.category}" data-search="${escapeHtml(searchable.toLowerCase())}">
         <span class="row-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="resource-name">
           <h2><a href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)}</a></h2>
-          <span>${escapeHtml(domain)}</span>
         </div>
         <span class="category-label">${escapeHtml(categoryLabel)}</span>
         <p class="resource-description">${escapeHtml(resource.description)}</p>
@@ -72,14 +69,14 @@ const html = `<!doctype html>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Gradient Atlas · 梯度图谱</title>
-    <meta name="description" content="从仓库资源清单自动生成的机器学习学习导航。">
+    <meta name="description" content="从仓库资源清单生成的机器学习导航。">
     <link rel="canonical" href="https://luca-888.github.io/ml-portal/">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
     <script src="./app.js" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gradient Atlas · 梯度图谱">
-    <meta property="og:description" content="一份简单、持续维护的机器学习学习资源清单。">
+    <meta property="og:description" content="机器学习仓库、课程、论文、博客与工具。">
     <meta property="og:url" content="https://luca-888.github.io/ml-portal/">
     <meta property="og:image" content="https://luca-888.github.io/ml-portal/og.png">
     <meta name="twitter:card" content="summary_large_image">
@@ -99,7 +96,7 @@ const html = `<!doctype html>
           <p class="eyebrow">ML LEARNING DIRECTORY</p>
           <h1>机器学习资源索引</h1>
         </div>
-        <p>精选仓库、课程、论文入口、博客与工具。用搜索和分类快速定位，资源内容由仓库清单自动生成。</p>
+        <p>仓库、课程、论文、博客与工具。支持搜索和分类筛选。</p>
       </section>
 
       <section class="directory" id="resources">

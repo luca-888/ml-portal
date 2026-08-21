@@ -2,161 +2,161 @@
   {
     "category": "repo",
     "title": "PyTorch",
-    "description": "灵活、成熟的深度学习框架；从研究原型到生产部署都值得作为默认入口。",
+    "description": "深度学习训练与部署框架。",
     "url": "https://github.com/pytorch/pytorch",
     "tags": ["Framework", "Training"]
   },
   {
     "category": "repo",
     "title": "vLLM",
-    "description": "高吞吐、内存高效的大模型推理与服务引擎。",
+    "description": "大语言模型推理与服务引擎。",
     "url": "https://github.com/vllm-project/vllm",
     "tags": ["LLM", "Inference"]
   },
   {
     "category": "repo",
     "title": "Transformers",
-    "description": "预训练模型生态的事实标准接口，覆盖文本、视觉、音频与多模态。",
+    "description": "文本、视觉、音频与多模态预训练模型接口。",
     "url": "https://github.com/huggingface/transformers",
     "tags": ["LLM", "Multimodal"]
   },
   {
     "category": "repo",
     "title": "llama.cpp",
-    "description": "用 C/C++ 在广泛硬件上高效运行大模型。",
+    "description": "用 C/C++ 在多种硬件上运行和量化大语言模型。",
     "url": "https://github.com/ggml-org/llama.cpp",
     "tags": ["Local AI", "Inference"]
   },
   {
     "category": "repo",
     "title": "scikit-learn",
-    "description": "经典机器学习最可靠的工具箱之一，API 和文档也值得学习。",
+    "description": "Python 机器学习算法与工具集。",
     "url": "https://github.com/scikit-learn/scikit-learn",
     "tags": ["Classical ML", "Python"]
   },
   {
     "category": "repo",
     "title": "Liger Kernel",
-    "description": "面向大模型训练的高效 Triton kernels。",
+    "description": "用于大模型训练的 Triton kernels。",
     "url": "https://github.com/linkedin/Liger-Kernel",
     "tags": ["Systems", "Triton"]
   },
   {
     "category": "repo",
     "title": "MLX",
-    "description": "Apple silicon 上的数组与机器学习框架。",
+    "description": "Apple silicon 数组与机器学习框架。",
     "url": "https://github.com/ml-explore/mlx",
     "tags": ["Apple Silicon", "Framework"]
   },
   {
     "category": "repo",
     "title": "TRL",
-    "description": "用强化学习和偏好优化等方法进行模型后训练的工具集。",
+    "description": "强化学习与偏好优化的模型后训练工具集。",
     "url": "https://github.com/huggingface/trl",
     "tags": ["Post-training", "RLHF"]
   },
   {
     "category": "course",
     "title": "Practical Deep Learning",
-    "description": "fast.ai 的代码优先深度学习课程。",
+    "description": "代码驱动的深度学习课程。",
     "url": "https://course.fast.ai/",
     "tags": ["Hands-on", "Free"]
   },
   {
     "category": "course",
     "title": "Stanford CS231n",
-    "description": "计算机视觉与深度学习的经典课程。",
+    "description": "斯坦福计算机视觉与深度学习课程。",
     "url": "https://cs231n.stanford.edu/",
     "tags": ["Vision", "Theory"]
   },
   {
     "category": "course",
     "title": "Full Stack Deep Learning",
-    "description": "从问题定义、数据和训练一路走到部署与监控。",
+    "description": "问题定义、数据、训练、部署与监控课程。",
     "url": "https://fullstackdeeplearning.com/",
     "tags": ["Production", "MLOps"]
   },
   {
     "category": "course",
     "title": "Hugging Face Learn",
-    "description": "围绕 LLM、agents、音频和视觉组织的免费实践课程。",
+    "description": "LLM、agents、音频与视觉课程。",
     "url": "https://huggingface.co/learn",
     "tags": ["LLM", "Hands-on"]
   },
   {
     "category": "course",
     "title": "Deep Learning Book",
-    "description": "Goodfellow、Bengio 与 Courville 的经典教材。",
+    "description": "Goodfellow、Bengio 与 Courville 编写的深度学习教材。",
     "url": "https://www.deeplearningbook.org/",
     "tags": ["Textbook", "Theory"]
   },
   {
     "category": "research",
     "title": "arXiv · cs.LG",
-    "description": "机器学习论文的每日源头。",
+    "description": "机器学习论文列表，每日更新。",
     "url": "https://arxiv.org/list/cs.LG/recent",
     "tags": ["Papers", "Daily"]
   },
   {
     "category": "research",
     "title": "Papers with Code",
-    "description": "把论文、代码和 benchmark 连在一起。",
+    "description": "论文、代码与 benchmark 索引。",
     "url": "https://paperswithcode.com/",
     "tags": ["Benchmarks", "Code"]
   },
   {
     "category": "research",
     "title": "OpenReview",
-    "description": "阅读公开评审、作者回复与研究讨论。",
+    "description": "论文评审、作者回复与讨论平台。",
     "url": "https://openreview.net/",
     "tags": ["Peer Review", "Papers"]
   },
   {
     "category": "research",
     "title": "Semantic Scholar",
-    "description": "沿引用关系寻找前置工作与后续影响。",
+    "description": "论文搜索与引用关系查询。",
     "url": "https://www.semanticscholar.org/",
     "tags": ["Discovery", "Citations"]
   },
   {
     "category": "blog",
     "title": "Lil’Log",
-    "description": "带推导、参考文献和图解的系统学习笔记。",
+    "description": "机器学习研究笔记与参考文献。",
     "url": "https://lilianweng.github.io/",
     "tags": ["Deep Dive", "LLM"]
   },
   {
     "category": "blog",
     "title": "Distill",
-    "description": "机器学习可视化解释的经典档案。",
+    "description": "机器学习可视化文章档案。",
     "url": "https://distill.pub/",
     "tags": ["Visual Essays", "Archive"]
   },
   {
     "category": "blog",
     "title": "Jay Alammar",
-    "description": "用高质量图解拆开 Transformer、BERT 等关键概念。",
+    "description": "Transformer、BERT 等模型图解。",
     "url": "https://jalammar.github.io/",
     "tags": ["Visual Guide", "NLP"]
   },
   {
     "category": "blog",
     "title": "Ahead of AI",
-    "description": "Sebastian Raschka 的研究与工程笔记。",
+    "description": "模型研究与工程笔记。",
     "url": "https://magazine.sebastianraschka.com/",
     "tags": ["LLM", "Engineering"]
   },
   {
     "category": "blog",
     "title": "Chip Huyen",
-    "description": "机器学习系统、数据与 AI 工程的实践思考。",
+    "description": "机器学习系统、数据与 AI 工程文章。",
     "url": "https://huyenchip.com/blog/",
     "tags": ["MLOps", "Systems"]
   },
   {
     "category": "tool",
     "title": "Hugging Face",
-    "description": "模型、数据集与 Demo 的开放协作中心。",
+    "description": "模型、数据集与 Demo 托管平台。",
     "url": "https://huggingface.co/",
     "tags": ["Models", "Datasets"]
   },
@@ -170,14 +170,14 @@
   {
     "category": "tool",
     "title": "Gradio",
-    "description": "用少量 Python 代码把模型变成交互界面。",
+    "description": "用 Python 创建模型交互界面。",
     "url": "https://www.gradio.app/",
     "tags": ["Demo", "Python"]
   },
   {
     "category": "tool",
     "title": "Kaggle Notebooks",
-    "description": "免配置的 Notebook、公开数据集和社区案例。",
+    "description": "Notebook、数据集与社区案例平台。",
     "url": "https://www.kaggle.com/code",
     "tags": ["Notebooks", "Datasets"]
   }
