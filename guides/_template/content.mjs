@@ -1,0 +1,17 @@
+export default {
+  slug: "template",
+  title: "Template",
+  subtitle: "Replace this file in a project directory.",
+  repoUrl: "https://github.com/owner/repo",
+  accent: "#2549d8",
+  tags: [],
+  audience: "",
+  prerequisites: [],
+  outcomes: [],
+  overview: [],
+  architecture: { title: "", description: "", nodes: [], edges: [] },
+  sections: [],
+  lab: { title: "", intro: "", html: "" },
+  takeaways: [],
+  sources: [],
+};

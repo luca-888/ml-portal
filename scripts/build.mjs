@@ -1,12 +1,15 @@
 import { copyFile, mkdir, readFile, rm, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
+import { buildGuides, loadGuides } from "./guide-builder.mjs";
 
 const root = dirname(dirname(fileURLToPath(import.meta.url)));
 const output = join(root, "dist");
 const resources = JSON.parse(
   await readFile(join(root, "data", "resources.json"), "utf8"),
 );
+const guides = await loadGuides(root);
+const guideByRepo = new Map(guides.map((guide) => [guide.repoUrl, guide]));
 
 const categories = [
   { key: "repo", label: "开源仓库", number: "01" },
@@ -43,6 +46,7 @@ const rows = resources
   .map((resource, index) => {
     const categoryLabel = categoryLabels.get(resource.category);
     const iconUrl = resource.icon ?? null;
+    const guide = guideByRepo.get(resource.url);
     const searchable = [
       resource.title,
       resource.description,
@@ -55,6 +59,7 @@ const rows = resources
         <div class="resource-name">
           ${iconUrl ? `<img src="${escapeHtml(iconUrl)}" alt="" width="18" height="18" loading="lazy" decoding="async">` : ""}
           <h2><a href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)}</a></h2>
+          ${guide ? `<a class="guide-badge" href="./guides/${escapeHtml(guide.slug)}/">解读</a>` : ""}
         </div>
         <span class="category-label">${escapeHtml(categoryLabel)}</span>
         <p class="resource-description">${escapeHtml(resource.description)}</p>
@@ -90,6 +95,7 @@ const html = `<!doctype html>
         <a class="brand" href="#top"><span>G/</span> Gradient Atlas</a>
         <div>
           <span>${resources.length} 个资源</span>
+          ${guides.length ? `<a href="./guides/">项目解读 ${guides.length}</a>` : ""}
           <a href="https://github.com/luca-888/ml-portal" target="_blank" rel="noreferrer">GitHub ↗</a>
         </div>
       </header>
@@ -140,8 +146,9 @@ await copyFile(join(root, "site", "app.js"), join(output, "app.js"));
 await copyFile(join(root, "public", "favicon.svg"), join(output, "favicon.svg"));
 await copyFile(join(root, "public", "og.png"), join(output, "og.png"));
 await writeFile(join(output, ".nojekyll"), "");
+await buildGuides({ root, output, guides });
 
-console.log(`Built ${resources.length} resources into dist/index.html`);
+console.log(`Built ${resources.length} resources and ${guides.length} guides into dist/`);
 
 function validateResources(items) {
   const allowedCategories = new Set(categories.map(({ key }) => key));

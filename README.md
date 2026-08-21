@@ -18,6 +18,8 @@ GitHub Pages
 
 仓库中的 [`data/resources.json`](data/resources.json) 是唯一数据源。提交到 `main` 后，GitHub Actions 会生成纯静态 HTML，并自动发布到 GitHub Pages。
 
+项目解读位于 `guides/<slug>/`。每页由三个文件组成：`content.mjs` 保存教学内容和来源，`lab.js` 实现交互实验，`lab.css` 保存页面专用样式。`scripts/guide-builder.mjs` 将它们生成到 `dist/guides/`。
+
 没有数据库、登录、服务器、React、Cloudflare 或额外托管服务。
 
 ## 添加资源
