@@ -42,6 +42,7 @@ const filters = [
 const rows = resources
   .map((resource, index) => {
     const categoryLabel = categoryLabels.get(resource.category);
+    const iconUrl = repositoryIconUrl(resource);
     const searchable = [
       resource.title,
       resource.description,
@@ -52,6 +53,7 @@ const rows = resources
       <article class="resource-row" data-resource data-category="${resource.category}" data-search="${escapeHtml(searchable.toLowerCase())}">
         <span class="row-index">${String(index + 1).padStart(2, "0")}</span>
         <div class="resource-name">
+          ${iconUrl ? `<img src="${escapeHtml(iconUrl)}" alt="" width="28" height="28" loading="lazy" decoding="async">` : ""}
           <h2><a href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)}</a></h2>
         </div>
         <span class="category-label">${escapeHtml(categoryLabel)}</span>
@@ -178,4 +180,18 @@ function escapeHtml(value) {
     .replaceAll(">", "&gt;")
     .replaceAll('"', "&quot;")
     .replaceAll("'", "&#039;");
+}
+
+function repositoryIconUrl(resource) {
+  if (!new Set(["repo", "implementation"]).has(resource.category)) {
+    return null;
+  }
+
+  const url = new URL(resource.url);
+  const [owner] = url.pathname.split("/").filter(Boolean);
+  if (url.hostname !== "github.com" || !owner) {
+    return null;
+  }
+
+  return `https://github.com/${encodeURIComponent(owner)}.png?size=64`;
 }
