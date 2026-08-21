@@ -18,40 +18,51 @@ const categories = [
 
 validateResources(resources);
 
-const categoryLinks = categories
+const categoryLabels = new Map(
+  categories.map((category) => [category.key, category.label]),
+);
+
+const filters = [
+  { key: "all", label: "全部", count: resources.length },
+  ...categories.map((category) => ({
+    key: category.key,
+    label: category.label,
+    count: resources.filter((resource) => resource.category === category.key).length,
+  })),
+]
   .map(
-    ({ key, label, number }) => `
-      <a href="#${key}"><span>${number}</span>${label}</a>`,
+    ({ key, label, count }, index) => `
+      <button type="button" data-filter="${key}" aria-pressed="${index === 0}">
+        ${label}<span>${count}</span>
+      </button>`,
   )
   .join("");
 
-const sections = categories
-  .map(({ key, label, number }) => {
-    const items = resources.filter((resource) => resource.category === key);
-    const rows = items
-      .map(
-        (resource) => `
-          <article>
-            <div>
-              <h3><a href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)} <span aria-hidden="true">↗</span></a></h3>
-              <p>${escapeHtml(resource.description)}</p>
-            </div>
-            <ul aria-label="${escapeHtml(resource.title)} 标签">
-              ${resource.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")}
-            </ul>
-          </article>`,
-      )
-      .join("");
+const rows = resources
+  .map((resource, index) => {
+    const categoryLabel = categoryLabels.get(resource.category);
+    const searchable = [
+      resource.title,
+      resource.description,
+      categoryLabel,
+      ...resource.tags,
+    ].join(" ");
+    const domain = new URL(resource.url).hostname.replace(/^www\./, "");
 
     return `
-      <section class="resource-section" id="${key}">
-        <div class="section-heading">
-          <span>${number}</span>
-          <h2>${label}</h2>
-          <em>${items.length}</em>
+      <article class="resource-row" data-resource data-category="${resource.category}" data-search="${escapeHtml(searchable.toLowerCase())}">
+        <span class="row-index">${String(index + 1).padStart(2, "0")}</span>
+        <div class="resource-name">
+          <h2><a href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer">${escapeHtml(resource.title)}</a></h2>
+          <span>${escapeHtml(domain)}</span>
         </div>
-        <div class="resource-list">${rows}</div>
-      </section>`;
+        <span class="category-label">${escapeHtml(categoryLabel)}</span>
+        <p class="resource-description">${escapeHtml(resource.description)}</p>
+        <ul aria-label="${escapeHtml(resource.title)} 标签">
+          ${resource.tags.map((tag) => `<li>${escapeHtml(tag)}</li>`).join("")}
+        </ul>
+        <a class="open-link" href="${escapeHtml(resource.url)}" target="_blank" rel="noreferrer" aria-label="打开 ${escapeHtml(resource.title)}">↗</a>
+      </article>`;
   })
   .join("");
 
@@ -65,6 +76,7 @@ const html = `<!doctype html>
     <link rel="canonical" href="https://luca-888.github.io/ml-portal/">
     <link rel="icon" href="./favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js" defer></script>
     <meta property="og:type" content="website">
     <meta property="og:title" content="Gradient Atlas · 梯度图谱">
     <meta property="og:description" content="一份简单、持续维护的机器学习学习资源清单。">
@@ -74,29 +86,42 @@ const html = `<!doctype html>
   </head>
   <body>
     <main>
-      <header class="site-header">
-        <a class="brand" href="#top">Gradient Atlas</a>
-        <nav aria-label="页面导航">
-          <a href="#resources">资源</a>
+      <header class="site-header" id="top">
+        <a class="brand" href="#top"><span>G/</span> Gradient Atlas</a>
+        <div>
+          <span>${resources.length} 个资源</span>
           <a href="https://github.com/luca-888/ml-portal" target="_blank" rel="noreferrer">GitHub ↗</a>
-        </nav>
+        </div>
       </header>
 
-      <section class="hero" id="top">
-        <p class="eyebrow">A CURATED ML LEARNING LIST</p>
-        <h1>机器学习，<br>从这些资源开始。</h1>
-        <div class="hero-meta">
-          <p>一份简单、持续维护的 ML 学习资源清单。仓库是唯一数据源，网站会根据清单自动生成。</p>
-          <span>${resources.length} RESOURCES · ${categories.length} CATEGORIES</span>
+      <section class="directory-intro">
+        <div>
+          <p class="eyebrow">ML LEARNING DIRECTORY</p>
+          <h1>机器学习资源索引</h1>
         </div>
+        <p>精选仓库、课程、论文入口、博客与工具。用搜索和分类快速定位，资源内容由仓库清单自动生成。</p>
       </section>
 
-      <section class="catalog" id="resources">
-        <aside>
-          <p>按类别浏览</p>
-          <nav aria-label="资源分类">${categoryLinks}</nav>
-        </aside>
-        <div class="resource-sections">${sections}</div>
+      <section class="directory" id="resources">
+        <div class="directory-controls">
+          <label class="search-field">
+            <span class="sr-only">搜索资源</span>
+            <span aria-hidden="true">⌕</span>
+            <input id="resource-search" type="search" placeholder="搜索名称、说明或标签…" autocomplete="off">
+            <kbd>/</kbd>
+          </label>
+          <div class="filter-group" aria-label="资源分类">${filters}</div>
+          <p class="result-count" aria-live="polite"><strong id="visible-count">${resources.length}</strong> / ${resources.length}</p>
+        </div>
+
+        <div class="column-head" aria-hidden="true">
+          <span>#</span><span>资源</span><span>分类</span><span>简介</span><span>标签</span><span></span>
+        </div>
+        <div class="resource-list" id="resource-list">${rows}</div>
+        <div class="empty-state" id="empty-state" hidden>
+          <strong>没有匹配的资源</strong>
+          <span>试试更短的关键词或切换分类。</span>
+        </div>
       </section>
 
       <footer>
@@ -111,6 +136,7 @@ await rm(output, { recursive: true, force: true });
 await mkdir(output, { recursive: true });
 await writeFile(join(output, "index.html"), html);
 await copyFile(join(root, "site", "styles.css"), join(output, "styles.css"));
+await copyFile(join(root, "site", "app.js"), join(output, "app.js"));
 await copyFile(join(root, "public", "favicon.svg"), join(output, "favicon.svg"));
 await copyFile(join(root, "public", "og.png"), join(output, "og.png"));
 await writeFile(join(output, ".nojekyll"), "");

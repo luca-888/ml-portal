@@ -6,10 +6,13 @@ const html = await readFile(new URL("../dist/index.html", import.meta.url), "utf
 
 test("generates the complete resource catalog", () => {
   assert.match(html, /<title>Gradient Atlas · 梯度图谱<\/title>/);
-  assert.match(html, /26 RESOURCES · 5 CATEGORIES/);
+  assert.match(html, /26 个资源/);
   assert.match(html, /PyTorch/);
   assert.match(html, /Hugging Face/);
   assert.match(html, /data\/resources\.json/);
+  assert.match(html, /id="resource-search"/);
+  assert.match(html, /data-filter="course"/);
+  assert.match(html, /class="resource-row"/);
 });
 
 test("uses GitHub Pages metadata and relative assets", () => {
@@ -23,6 +26,7 @@ test("produces all deployable static files", async () => {
   await Promise.all([
     access(new URL("../dist/index.html", import.meta.url)),
     access(new URL("../dist/styles.css", import.meta.url)),
+    access(new URL("../dist/app.js", import.meta.url)),
     access(new URL("../dist/favicon.svg", import.meta.url)),
     access(new URL("../dist/og.png", import.meta.url)),
     access(new URL("../dist/.nojekyll", import.meta.url)),
