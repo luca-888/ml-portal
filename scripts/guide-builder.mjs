@@ -13,6 +13,7 @@ const guideOrder = [
   "build-nanogpt",
   "gpu-puzzles",
   "minbpe",
+  "liger-kernel",
 ];
 
 export async function loadGuides(root) {

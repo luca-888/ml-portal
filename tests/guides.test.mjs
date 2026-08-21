@@ -13,13 +13,14 @@ const expectedSlugs = [
   "build-nanogpt",
   "gpu-puzzles",
   "minbpe",
+  "liger-kernel",
 ];
 
 const root = new URL("../", import.meta.url);
 const home = await readFile(new URL("../dist/index.html", import.meta.url), "utf8");
 const hub = await readFile(new URL("../dist/guides/index.html", import.meta.url), "utf8");
 
-test("builds the ten project guides and links them from the directory", () => {
+test("builds every project guide and links it from the directory", () => {
   assert.equal(home.match(/class="guide-badge"/g)?.length, expectedSlugs.length);
   assert.equal(hub.match(/class="guide-index-card"/g)?.length, expectedSlugs.length);
 });
