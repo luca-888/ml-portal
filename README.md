@@ -1,16 +1,34 @@
 # Gradient Atlas · 梯度图谱
 
-一个持续生长的个人机器学习资源索引，收录真正值得反复打开的 repo、论文入口、课程、博客与工具。
+一份简单、持续维护的机器学习学习资源清单，以及一个由这份清单自动生成的网站。
 
-![Gradient Atlas social card](public/og.png)
+## 收录内容
 
-## 已有能力
+- 开源仓库
+- 课程
+- 论文与研究入口
+- 博客
+- 工具
 
-- 26 个精选 ML 资源，按仓库、研究、博客、课程与工具分类
-- 支持全文搜索与 `⌘/Ctrl + K` 快捷聚焦
-- 支持“稍后阅读”和随机探索
-- 可以添加私人收藏，数据仅保存在当前浏览器
-- 响应式布局，适配桌面与移动设备
+所有资源都保存在 [`data/resources.json`](data/resources.json)。网站会读取这一个文件并按分类生成页面，没有数据库、登录或后台管理。
+
+## 添加资源
+
+在 `data/resources.json` 中新增一项：
+
+```json
+{
+  "category": "course",
+  "title": "资源名称",
+  "description": "为什么值得学习。",
+  "url": "https://example.com/",
+  "tags": ["Topic", "Free"]
+}
+```
+
+`category` 可选：`repo`、`course`、`research`、`blog`、`tool`。
+
+提交后，网站会在下一次构建时自动更新。
 
 ## 本地运行
 
@@ -21,17 +39,11 @@ npm install
 npm run dev
 ```
 
-然后打开 `http://localhost:3000`。
-
-## 验证与构建
+验证改动：
 
 ```bash
 npm test
 ```
-
-## 内容维护
-
-公共资源位于 `app/page.tsx` 的 `resources` 数组中。新增条目时请写清：它解决什么问题、为什么值得收藏，以及最能帮助检索的两个标签。
 
 ## License
 

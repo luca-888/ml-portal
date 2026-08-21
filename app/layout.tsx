@@ -14,10 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Gradient Atlas · 梯度图谱",
-  description: "一个持续生长的个人机器学习资源索引。",
+  description: "从仓库资源清单自动生成的机器学习学习导航。",
   openGraph: {
     title: "Gradient Atlas · 梯度图谱",
-    description: "精选 repo、论文、课程、博客与工具。只留下值得反复打开的东西。",
+    description: "一份简单、持续维护的机器学习学习资源清单。",
     type: "website",
     images: [
       {
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Gradient Atlas · 梯度图谱",
-    description: "一个持续生长的个人机器学习资源索引。",
+    description: "一份简单、持续维护的机器学习学习资源清单。",
     images: ["https://raw.githubusercontent.com/luca-888/ml-portal/main/public/og.png"],
   },
   icons: {
