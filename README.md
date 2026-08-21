@@ -36,6 +36,8 @@ GitHub Pages
 
 `category` 可选：`repo`、`implementation`、`course`、`research`、`blog`、`tool`。
 
+有品牌 Logo 的资源可增加 `icon`，使用 HTTPS 图片地址。没有明确 Logo 时省略。
+
 ## 本地生成
 
 需要 Node.js 22 或更高版本，无需安装依赖。

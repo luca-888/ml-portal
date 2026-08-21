@@ -4,6 +4,7 @@
     "title": "PyTorch",
     "description": "深度学习训练与部署框架。",
     "url": "https://github.com/pytorch/pytorch",
+    "icon": "https://github.com/pytorch.png?size=64",
     "tags": ["Framework", "Training"]
   },
   {
@@ -11,6 +12,7 @@
     "title": "vLLM",
     "description": "大语言模型推理与服务引擎。",
     "url": "https://github.com/vllm-project/vllm",
+    "icon": "https://github.com/vllm-project.png?size=64",
     "tags": ["LLM", "Inference"]
   },
   {
@@ -18,6 +20,7 @@
     "title": "SGLang",
     "description": "大语言模型与多模态模型服务框架。",
     "url": "https://github.com/sgl-project/sglang",
+    "icon": "https://github.com/sgl-project.png?size=64",
     "tags": ["LLM", "Inference"]
   },
   {
@@ -25,6 +28,7 @@
     "title": "Transformers",
     "description": "文本、视觉、音频与多模态预训练模型接口。",
     "url": "https://github.com/huggingface/transformers",
+    "icon": "https://github.com/huggingface.png?size=64",
     "tags": ["LLM", "Multimodal"]
   },
   {
@@ -39,6 +43,7 @@
     "title": "scikit-learn",
     "description": "Python 机器学习算法与工具集。",
     "url": "https://github.com/scikit-learn/scikit-learn",
+    "icon": "https://github.com/scikit-learn.png?size=64",
     "tags": ["Classical ML", "Python"]
   },
   {
@@ -53,6 +58,7 @@
     "title": "MLX",
     "description": "Apple silicon 数组与机器学习框架。",
     "url": "https://github.com/ml-explore/mlx",
+    "icon": "https://github.com/ml-explore.png?size=64",
     "tags": ["Apple Silicon", "Framework"]
   },
   {
@@ -60,6 +66,7 @@
     "title": "TRL",
     "description": "强化学习与偏好优化的模型后训练工具集。",
     "url": "https://github.com/huggingface/trl",
+    "icon": "https://github.com/huggingface.png?size=64",
     "tags": ["Post-training", "RLHF"]
   },
   {
@@ -74,6 +81,7 @@
     "title": "Mini-SGLang",
     "description": "用于理解大模型服务系统的 SGLang 实现。",
     "url": "https://github.com/sgl-project/mini-sglang",
+    "icon": "https://github.com/sgl-project.png?size=64",
     "tags": ["Inference", "Systems"]
   },
   {
@@ -102,6 +110,7 @@
     "title": "Practical Deep Learning",
     "description": "代码驱动的深度学习课程。",
     "url": "https://course.fast.ai/",
+    "icon": "https://github.com/fastai.png?size=64",
     "tags": ["Hands-on", "Free"]
   },
   {
@@ -123,6 +132,7 @@
     "title": "Hugging Face Learn",
     "description": "LLM、agents、音频与视觉课程。",
     "url": "https://huggingface.co/learn",
+    "icon": "https://github.com/huggingface.png?size=64",
     "tags": ["LLM", "Hands-on"]
   },
   {
@@ -144,6 +154,7 @@
     "title": "Papers with Code",
     "description": "论文、代码与 benchmark 索引。",
     "url": "https://paperswithcode.com/",
+    "icon": "https://github.com/paperswithcode.png?size=64",
     "tags": ["Benchmarks", "Code"]
   },
   {
@@ -151,6 +162,7 @@
     "title": "OpenReview",
     "description": "论文评审、作者回复与讨论平台。",
     "url": "https://openreview.net/",
+    "icon": "https://github.com/openreview.png?size=64",
     "tags": ["Peer Review", "Papers"]
   },
   {
@@ -200,6 +212,7 @@
     "title": "Hugging Face",
     "description": "模型、数据集与 Demo 托管平台。",
     "url": "https://huggingface.co/",
+    "icon": "https://github.com/huggingface.png?size=64",
     "tags": ["Models", "Datasets"]
   },
   {
@@ -207,6 +220,7 @@
     "title": "Weights & Biases",
     "description": "实验跟踪、模型评估与协作平台。",
     "url": "https://wandb.ai/site",
+    "icon": "https://github.com/wandb.png?size=64",
     "tags": ["Experiments", "MLOps"]
   },
   {
@@ -214,6 +228,7 @@
     "title": "Gradio",
     "description": "用 Python 创建模型交互界面。",
     "url": "https://www.gradio.app/",
+    "icon": "https://github.com/gradio-app.png?size=64",
     "tags": ["Demo", "Python"]
   },
   {
@@ -221,6 +236,7 @@
     "title": "Kaggle Notebooks",
     "description": "Notebook、数据集与社区案例平台。",
     "url": "https://www.kaggle.com/code",
+    "icon": "https://github.com/Kaggle.png?size=64",
     "tags": ["Notebooks", "Datasets"]
   }
 ]

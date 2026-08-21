@@ -20,6 +20,11 @@ test("generates the complete resource catalog", () => {
   assert.match(html, /data-filter="implementation"/);
   assert.match(html, /class="resource-row"/);
   assert.match(html, /src="https:\/\/github\.com\/pytorch\.png\?size=64"/);
+  assert.match(html, /src="https:\/\/github\.com\/fastai\.png\?size=64"/);
+  assert.equal(
+    html.match(/<img src=/g)?.length,
+    resources.filter((resource) => resource.icon).length,
+  );
 });
 
 test("uses GitHub Pages metadata and relative assets", () => {
