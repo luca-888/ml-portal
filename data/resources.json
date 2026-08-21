@@ -15,6 +15,13 @@
   },
   {
     "category": "repo",
+    "title": "SGLang",
+    "description": "大语言模型与多模态模型服务框架。",
+    "url": "https://github.com/sgl-project/sglang",
+    "tags": ["LLM", "Inference"]
+  },
+  {
+    "category": "repo",
     "title": "Transformers",
     "description": "文本、视觉、音频与多模态预训练模型接口。",
     "url": "https://github.com/huggingface/transformers",
